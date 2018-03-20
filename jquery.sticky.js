@@ -70,7 +70,7 @@
         }
         else {
           var newTop = documentHeight - s.stickyElement.outerHeight()
-            - s.topSpacing - s.bottomSpacing - scrollTop - extra;
+            - s.topSpacing - (typeof s.bottomSpacing === 'function'?s.bottomSpacing():s.bottomSpacing) - scrollTop - extra;
           if (newTop < 0) {
             newTop = newTop + s.topSpacing;
           } else {
